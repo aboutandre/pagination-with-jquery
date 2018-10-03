@@ -4,8 +4,8 @@ FSJS project 2 - List Filter and Pagination
 ******************************************/
 
 // Add variables that store DOM elements you will need to reference and/or manipulate
-
-
+const $filter = $('<input />');
+const $header = $('.page-header.cf');
 
 // Create a function to hide all of the items in the list excpet for the ten you want to show
 // Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
@@ -25,4 +25,13 @@ FSJS project 2 - List Filter and Pagination
 
 
 
+// Search
+$header.append($filter);
 
+    // $('#s').keyup(function(){
+    //  var valThis = $(this).val().toLowerCase();
+    //   $('.countryList>li').each(function(){
+    //    var text = $(this).text().toLowerCase();
+    //       (text.indexOf(valThis) == 0) ? $(this).show() : $(this).hide();            
+    //  });
+    // });
