@@ -6,10 +6,25 @@ FSJS project 2 - List Filter and Pagination
 // Add variables that store DOM elements you will need to reference and/or manipulate
 const $filter = $('<input />');
 const $header = $('.page-header.cf');
-
+const $studentItem = $('.student-item');
+const $studentAmmout = $studentItem.length;
+const limitPerPage = 5;
 // Create a function to hide all of the items in the list excpet for the ten you want to show
-// Tip: Keep in mind that with a list of 54 studetns, the last page will only display four
-
+// Tip: Keep in mind that with a list of 54 students, the last page will only display four
+const showPage = (list = $studentItem, page = 0) => {
+    list.each(function(index, element){
+    let rangeLow = (page * limitPerPage);
+    let rangeHigh = (page * limitPerPage) + limitPerPage;
+if (index >= rangeLow && index < rangeHigh) {
+    console.log(index);
+    $(element).show();
+} else {
+    console.log('This should be hidden: '+ index);
+    $(element).hide();
+}
+    })
+};
+showPage();
 
 
 
