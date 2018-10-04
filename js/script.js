@@ -11,17 +11,17 @@ const $studentAmmout = $studentItem.length;
 const limitPerPage = 5;
 // Create a function to hide all of the items in the list excpet for the ten you want to show
 // Tip: Keep in mind that with a list of 54 students, the last page will only display four
-const showPage = (list = $studentItem, page = 0) => {
-    list.each(function(index, element){
-    let rangeLow = (page * limitPerPage);
-    let rangeHigh = (page * limitPerPage) + limitPerPage;
-if (index >= rangeLow && index < rangeHigh) {
-    console.log(index);
-    $(element).show();
-} else {
-    console.log('This should be hidden: '+ index);
-    $(element).hide();
-}
+const showPage = (page = 0, list = $studentItem) => {
+    list.each(function (index, element) {
+        let rangeLow = (page * limitPerPage);
+        let rangeHigh = (page * limitPerPage) + limitPerPage;
+        if (index >= rangeLow && index < rangeHigh) {
+            console.log(index);
+            $(element).show();
+        } else {
+            console.log('This should be hidden: ' + index);
+            $(element).hide();
+        }
     })
 };
 showPage();
