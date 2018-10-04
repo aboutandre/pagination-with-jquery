@@ -26,6 +26,9 @@ const showPage = (list = $('.student-item'), page = 0) => {
             $(this).hide();
         }
     })
+    // TODO 
+    // When a search yields 0 results, a message is displayed on the page, 
+    // informing the user that no results have been found.
 };
 
 // Create and append the pagination links - Creating a function that can do this is a good approach
