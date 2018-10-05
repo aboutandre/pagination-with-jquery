@@ -49,7 +49,7 @@ const createPagination = (totalAmmount = $studentAmmout) => {
     // If there was a pagination, we remove it
     $('.pagination').remove();
     // We calculate how many pages we need based on the ammount of unfiltered students
-    let pagesTotal = Math.round(totalAmmount / limitPerPage) + 1;
+    let pagesTotal = Math.floor(totalAmmount / limitPerPage) + 1;
     // console.log('The total pages is ' + (pagesTotal - 1));
     // Here we start our string that will concatenate all the necessary page buttons for the ammount of students that we have
     let pagination = '';
